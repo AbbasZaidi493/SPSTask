@@ -1,0 +1,21 @@
+<div ng-init="render()">
+  <div style="margin-top: 10px; margin-bottom: 10px">
+    <span >Page Size: </span> <span style="color:blue" id="lbPageSize"></span>
+    <span style=" margin-left: 10%">Total Pages: </span>  <span style="color:blue" id="lbTotalPages"></span>
+    <span style=" margin-left: 10%">Current Page: </span> <span style="color:blue" id="lbCurrentPage"></span>
+  </div>
+<div ag-grid="gridOptions" class="ag-fresh" style="height: 500px; width: 1000px; align-content: center;"></div>
+  <div class="container">
+    <ul class="pagination">
+      <li><a ng-click="onBtPrevious()">«</a></li>
+      <li><a ng-click="onBtFirst()">1</a></li>
+      <li><a ng-click="onBtSecond()">2</a></li>
+      <li><a ng-click="onBtThird()">3</a></li>
+      <li><a ng-click="onBtFourth()">4</a></li>
+      <li><a ng-click="onBtFifth()">5</a></li>
+      <li><a ng-click="onBtNext()">»</a></li>
+    </ul>
+  </div>
+</div>
+
+
