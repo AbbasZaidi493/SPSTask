@@ -8,7 +8,7 @@
  * Controller of the spsTaskApp
  */
 angular.module('spsTaskApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, $location, commentService) {
     var columnDefs = [
       {headerName: "postId", field: "postId"},
       {headerName: "id", field: "id"},
@@ -32,8 +32,22 @@ angular.module('spsTaskApp')
       columnDefs: columnDefs,
       pagination: true,
       suppressPaginationPanel: true,
-      onPaginationChanged: onPaginationPageLoaded
+      onPaginationChanged: onPaginationPageLoaded,
+      rowSelection: 'single',
+      onSelectionChanged: onSelectionChanged
     };
+
+    function onSelectionChanged() {
+      var selectedRow = $scope.gridOptions.api.getSelectedRows();
+      if (selectedRow) {
+        commentService.selectedComment = selectedRow[0];
+        $location.path('/comment/' + selectedRow[0].id);
+        $scope.$apply();
+      }
+
+
+    }
+
 
     function setText(selector, text) {
       document.querySelector(selector).innerHTML = text;
