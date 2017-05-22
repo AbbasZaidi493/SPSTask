@@ -1,2 +1,23 @@
-
-.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
+.pagination>li>a, .pagination>li>span {
+  border-radius: 50%
+  !important;margin: 0 5px;
+  background: blue;
+  color: white;
+}
+.grid {
+  height: 500px;
+  width: 1000px;
+  align-content: center;
+}
+.container-header {
+  height: 15%;
+  background: grey;
+  margin-top: -2%;
+  padding-top: 2%;
+  text-align: center;
+  color: white;
+}
+.spacing {
+  margin-top: 10px;
+  margin-bottom: 10px
+}

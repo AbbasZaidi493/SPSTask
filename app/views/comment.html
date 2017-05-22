@@ -1,10 +1,29 @@
 <section ng-init="init()">
 <div ng-if="comment">
-  {{comment.name}}
-  {{comment.id}}
+    <button ng-click="goBack()" class="btn btn-primary">Back</button>
+  <div class="stamp">
+  <div class="media" >
+    <a class="pull-left">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+    </a>
+    <div class="media-body">
+      <h4 class="title" title="Commenter Name">
+        {{comment.name}}
+      </h4>
+      <p class="summary" title="Comment">{{comment.body}}
+    </div>
+    <div class="custom">
+    <span class="glyphicon glyphicon-envelope" style="color: #00b3ee"></span> &nbsp; {{comment.email}}
+      &nbsp;&nbsp;
+    <span class="	glyphicon glyphicon-user" style="color: #00b3ee"></span> &nbsp; {{comment.id}}
+      </div>
+    </div>
+  </div>
 </div>
-<div ng-if="error">
-  {{error}}
-  <a ng-click="goBack()">Go Back</a>
-</div>
+  <div ng-if="error" class="error">
+    {{error}}
+    <a ng-click="goBack()">Go Back</a>
+  </div>
 </section>
+
+

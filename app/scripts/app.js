@@ -1,15 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name spsTaskApp
- * @description
- * # spsTaskApp
- *
- * Main module of the application.
- */
-
-
 agGrid.initialiseAgGridWithAngular1(angular);
 
 angular
@@ -30,12 +20,11 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        controller: 'MainCtrl'
       })
       .when('/comment/:id', {
         templateUrl: 'views/comment.html',
-        controller: 'CommentCtrl',
+        controller: 'CommentCtrl'
       })
       .otherwise({
         redirectTo: '/'

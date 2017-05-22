@@ -1,12 +1,4 @@
 'use strict';
-
-/**
- * @ngdoc function
- * @name spsTaskApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the spsTaskApp
- */
 angular.module('spsTaskApp')
   .controller('MainCtrl', function ($scope, $http, $location, commentService) {
     var columnDefs = [
@@ -17,16 +9,15 @@ angular.module('spsTaskApp')
       {headerName: "body", field: "body"}
     ];
 
-    $scope.render = function () {
+    $scope.getComments = function () {
       $http.get('https://jsonplaceholder.typicode.com/comments')
         .then(function(payload) {
           $scope.gridOptions.api.setRowData(payload.data);
-          console.log(payload.data);
         })
         .catch(function(err) {
           console.log(err);
         })
-    }
+    };
 
     $scope.gridOptions = {
       columnDefs: columnDefs,
@@ -44,10 +35,7 @@ angular.module('spsTaskApp')
         $location.path('/comment/' + selectedRow[0].id);
         $scope.$apply();
       }
-
-
     }
-
 
     function setText(selector, text) {
       document.querySelector(selector).innerHTML = text;
@@ -57,37 +45,36 @@ angular.module('spsTaskApp')
       setText('#lbPageSize', $scope.gridOptions.api.paginationGetPageSize());
       setText('#lbCurrentPage', $scope.gridOptions.api.paginationGetCurrentPage() + 1);
       setText('#lbTotalPages', $scope.gridOptions.api.paginationGetTotalPages());
+      setText('#lbTotalCount', $scope.gridOptions.api.getModel().getRowCount());
     }
 
     $scope.onBtFirst= function () {
       $scope.gridOptions.api.paginationGoToFirstPage();
-    }
+    };
 
     $scope.onBtNext= function () {
       $scope.gridOptions.api.paginationGoToNextPage();
-    }
+    };
 
     $scope.onBtPrevious= function () {
       $scope.gridOptions.api.paginationGoToPreviousPage();
-    }
+    };
 
     $scope.onBtSecond= function () {
       $scope.gridOptions.api.paginationGoToPage(1);
-    }
+    };
 
     $scope.onBtThird= function () {
       $scope.gridOptions.api.paginationGoToPage(2);
-    }
-
+    };
 
     $scope.onBtFourth= function () {
       $scope.gridOptions.api.paginationGoToPage(3);
-    }
-
+    };
 
     $scope.onBtFifth= function () {
       $scope.gridOptions.api.paginationGoToPage(4);
-    }
+    };
 
   });
 

@@ -1,10 +1,11 @@
-<div ng-init="render()">
-  <div style="margin-top: 10px; margin-bottom: 10px">
+<div ng-init="getComments()">
+  <div class="spacing">
     <span >Page Size: </span> <span style="color:blue" id="lbPageSize"></span>
     <span style=" margin-left: 10%">Total Pages: </span>  <span style="color:blue" id="lbTotalPages"></span>
     <span style=" margin-left: 10%">Current Page: </span> <span style="color:blue" id="lbCurrentPage"></span>
+    <span style=" margin-left: 10%">Total records count: </span> <span style="color:blue" id="lbTotalCount"></span>
   </div>
-<div ag-grid="gridOptions" class="ag-fresh" style="height: 500px; width: 1000px; align-content: center;"></div>
+<div ag-grid="gridOptions" class="ag-dark grid" ></div>
   <div class="container">
     <ul class="pagination">
       <li><a ng-click="onBtPrevious()">«</a></li>

@@ -1,0 +1,59 @@
+.custom {
+  margin-top: 3%;
+  font-family: "Times New Roman";
+}
+.btn-primary {
+  margin-bottom:-50%;
+  margin-left: 45%;
+}
+.stamp {
+  background-color: #666;
+  color: #fff;
+  margin-left: 4%;
+  margin-top: 10%;
+  font-weight: bold;
+  border: 2px solid #1b6d85;
+}
+
+.table-filter .media-photo {
+  width: 35px;
+}
+.table-filter .media-body {
+  display: block;
+  /* Had to use this style to force the div to expand (wasn't necessary with my bootstrap version 3.3.6) */
+}
+.media-meta {
+  font-size: 11px;
+  color: #999;
+  margin-top: 0;
+}
+.error {
+  margin-left: 20%;
+  margin-bottom: 25%;
+  margin-right: 25%;
+  margin-top: 20%;
+}
+
+.media .title {
+  color: #2BBCDE;
+  font-size: 20px;
+  font-family: "Georgia";
+  font-weight: bold;
+  line-height: normal;
+  margin: 0;
+}
+.media .title span {
+  font-size: .8em;
+  margin-right: 20px;
+}
+.media .title span.pagado {
+  color: #5cb85c;
+  margin-top: 10%;
+}
+
+.media .title span.cancelado {
+  color: #d9534f;
+}
+.media .summary {
+  font-size: 14px;
+}
